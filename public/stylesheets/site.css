@@ -2,7 +2,8 @@ body {
 	font-family: "Helvetica", 'Helvetica Neue', 'Arial', sans-serif;
 	line-height: 1.4;
 	color: #555753; 
-    background-image: url(/images/psych_bg.jpg);
+	background-color: #301830;
+    /* background-image: url(/images/psych_bg.jpg);*/
 	}
 h1 {
 	font-size: 150%;
