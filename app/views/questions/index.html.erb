@@ -4,22 +4,17 @@
   <tr>
     <th>Question</th>
     <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
+
   </tr>
 
 <% @questions.each do |question| %>
   <tr>
     <td><%= link_to sanitize(question.body), question %></td>
     <td><%= getUsernameLinkById(question.user_id) %></td>
-    
-    <td><%= link_to 'Edit', edit_question_path(question) if current_user_is?(question.user_id) %></td>
-    <td><%= link_to 'Destroy', question, :confirm => 'Are you sure?', :method => :delete  if current_user_is?(question.user_id) %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Question', new_question_path %>
+<%= link_to 'Ask a Question', new_question_path %>

@@ -59,7 +59,7 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.xml
   def update
-    @user = User.find(params[:id])
+    @user = User.find(current_user)
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
@@ -75,12 +75,6 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.xml
   def destroy
-    @user = User.find(params[:id])
-    @user.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(users_url) }
-      format.xml  { head :ok }
-    end
+    #TODO maybe -- do we need a destroy action for users? need to make sure it's self or admin only
   end
 end

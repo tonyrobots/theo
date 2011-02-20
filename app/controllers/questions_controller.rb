@@ -16,7 +16,8 @@ class QuestionsController < ApplicationController
   # GET /questions/1.xml
   def show
     @question = Question.find(params[:id])
-    @comments = Comment.find_all_by_target_id_and_type_id(@question.id, QUESTION) 
+    @comments = Comment.find_all_by_target_id_and_type_id(@question.id, QUESTION)
+    @comments.reverse!
     @comment = Comment.new
 
     respond_to do |format|
@@ -78,7 +79,7 @@ class QuestionsController < ApplicationController
   # DELETE /questions/1.xml
   def destroy
     @question = Question.find(params[:id])
-    @question.destroy
+    @question.destroy if current_user.id = question.user_id
 
     respond_to do |format|
       format.html { redirect_to(questions_url) }
