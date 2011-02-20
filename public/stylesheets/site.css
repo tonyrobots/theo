@@ -2,13 +2,12 @@ body {
 	font-family: "Helvetica", 'Helvetica Neue', 'Arial', sans-serif;
 	line-height: 1.4;
 	color: #555753; 
-    background-image: url(/images/stripe_bg2.png);
+    background-image: url(/images/flower_bg.jpg);
 	}
 h1 {
 	font-size: 150%;
 	font-weight: bold;
-	font-variant: small-caps;
-	letter-spacing: 3px;
+	letter-spacing: 2px;
 }
 h3 { 
 	font-style: italic;

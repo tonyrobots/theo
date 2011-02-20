@@ -1,4 +1,4 @@
-<h1>Listing questions</h1>
+<h1>Latest questions</h1>
 
 <table>
   <tr>
@@ -12,7 +12,7 @@
 <% @questions.each do |question| %>
   <tr>
     <td><%= link_to question.body, question %></td>
-    <td><%= question.user_id %></td>
+    <td><%= getUsernameLinkById(question.user_id) %></td>
     
     <td><%= link_to 'Edit', edit_question_path(question) if current_user_is?(question.user_id) %></td>
     <td><%= link_to 'Destroy', question, :confirm => 'Are you sure?', :method => :delete  if current_user_is?(question.user_id) %></td>

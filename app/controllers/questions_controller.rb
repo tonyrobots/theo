@@ -43,6 +43,7 @@ class QuestionsController < ApplicationController
   # POST /questions.xml
   def create
     @question = Question.new(params[:question])
+    @question.user_id = current_user.id
 
     respond_to do |format|
       if @question.save
