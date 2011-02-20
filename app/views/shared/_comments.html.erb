@@ -1,0 +1,32 @@
+
+
+	<h3>Comments:</h3>
+    <% if current_user %>
+            <% form_tag(comment_path, :method => "post") do %>
+            <fieldset>
+                    <legend>Respond to Question</legend>
+                <%= text_area 'comment','body', :cols => 80, :rows => 6 %>
+                    <p>
+                <%= submit_tag 'Add Response' %>
+                </p>
+            </fieldset>
+            <% end %>
+    <% else %>
+            <b> You must be <%= link_to "logged in", new_user_session_path %> to comment!</b>
+    <% end %>
+
+
+	<% for comment in @comments %>
+	  <div class="comment">
+	  <% if @comments.index(comment) == @comments.length-1 %> 
+        <!-- This is our new comment -->
+        <p id="new_comment">
+      <% else %>
+	   <p>
+	  <% end %>
+	  <%= sanitize(comment.body,:tags => %w(b i u)) %><br />
+	    <class id="subline">by <%= getUsernameLinkById(comment.user_id) %>, <%= time_ago_in_words(comment.created_at) %> ago</class>
+	   </p>
+	 
+	  </div>
+	<% end %>

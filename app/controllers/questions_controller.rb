@@ -16,7 +16,8 @@ class QuestionsController < ApplicationController
   # GET /questions/1.xml
   def show
     @question = Question.find(params[:id])
-    @comments = Comment.find_all_by_question_id(@question.id)
+    @comments = Comment.find_all_by_target_id_and_type_id(@question.id, QUESTION) 
+    @comment = Comment.new
 
     respond_to do |format|
       format.html # show.html.erb

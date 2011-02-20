@@ -1,22 +1,30 @@
-<%= form_for(@comment) do |f| %>
-  <% if @comment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this answer from being saved:</h2>
+<% if current_user %>
+        <%= form_for (@comment) do |f| %>
+        <fieldset>
+                <legend>Add Response</legend>
+            <%= f.text_area :body, :cols => 80, :rows => 6 %>
+			<%= f.hidden_field(:type_id, :value=> QUESTION) %>
+			<%= f.hidden_field(:target_id, :value=> @question.id) %>
+                <p>
+            <%= f.submit 'Add Response' %>
+            </p>
+        </fieldset>
+        <% end %>
+<% else %>
+        <b> You must be <%= link_to "logged in", new_user_session_path %> to comment!</b>
+<% end %>
 
-      <ul>
-      <% @comment.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+<% for comment in @comments %>
+  <div class="comment">
+  <% if @comments.index(comment) == @comments.length-1 %> 
+    <!-- This is our new comment -->
+    <p id="new_comment">
+  <% else %>
+   <p>
   <% end %>
-
-  <div class="field">
-    <%= f.label "Your Response:" %><br />
-    <%= f.text_area :body, :columns=>80, :rows=>10 %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
+  <%= sanitize(comment.body,:tags => %w(b i u)) %><br />
+    <class id="subline">by <%= getUsernameLinkById(comment.user_id) %>, <%= time_ago_in_words(comment.created_at) %> ago</class>
+   </p>
+ 
   </div>
 <% end %>
