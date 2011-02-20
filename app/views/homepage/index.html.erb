@@ -1,0 +1,9 @@
+Latest Questions:
+<ul>
+<% @questions.each do |question| %>
+	<li> <%= link_to question.body, question %> - <%= getUsernameLinkById(question.user_id) %>
+<% end %>
+</ul>
+<p />
+<%= link_to "Add a question", new_question_path %>
+
