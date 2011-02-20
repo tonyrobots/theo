@@ -7,13 +7,16 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+
 <div id="container">
-    <div id="header">
-      <%= link_to(image_tag("logo.png", :border =>0), root_path) %>
-    </div>
-    <nav class="round">
-      <%= render("shared/topnav") %>
+
+	<nav class="round">
+	  <%= render("shared/topnav") %>
 	</nav>
+
+	<div id="logo" class="round">
+	  <%= link_to(image_tag("theo.png", :border =>0), root_path) %>
+	</div>
 	<div id="flash">
 	  <p id="notice"><%= notice %></p>
 	  <p id="alert"><%= alert %></p>

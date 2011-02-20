@@ -1,4 +1,4 @@
-Latest Questions:
+<h1>Latest Questions:</h1>
 <ul>
 <% @questions.each do |question| %>
 	<li> <%= link_to question.body, question %> - <%= getUsernameLinkById(question.user_id) %>
