@@ -1,4 +1,5 @@
 class Comment < ActiveRecord::Base
-  belongs_to :user, :question
+  belongs_to :user
+  belongs_to :question
   attr_accessible :score
 end
