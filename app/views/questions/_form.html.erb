@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label "Your Question" %><br />
-    <%= f.text_field :body %>
+    <%= f.text_area :body, :columns=>80, :rows=>10 %>
   </div>
   <div class="field">
     <%= f.label :user_id %><br />
