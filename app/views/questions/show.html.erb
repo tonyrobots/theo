@@ -1,6 +1,9 @@
 
-<h1>  <%= @question.body %> </h1>
+<h1>  <%= sanitize(@question.body) %> </h1>
 
+<p>
+	<% render ("/shared/comment_form")%>
+</p>
 
 <%= 
 if current_user_is?(@question.user_id)

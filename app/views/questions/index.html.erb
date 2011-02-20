@@ -11,7 +11,7 @@
 
 <% @questions.each do |question| %>
   <tr>
-    <td><%= link_to question.body, question %></td>
+    <td><%= link_to sanitize(question.body), question %></td>
     <td><%= getUsernameLinkById(question.user_id) %></td>
     
     <td><%= link_to 'Edit', edit_question_path(question) if current_user_is?(question.user_id) %></td>

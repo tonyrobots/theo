@@ -6,6 +6,7 @@ Theo::Application.routes.draw do
   resources :subscriptions
   resources :questions
   resources :users
+  resources :comments
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
