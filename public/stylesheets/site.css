@@ -37,7 +37,6 @@ nav {
   background-color: white;
   padding: 0 1em;
   white-space: nowrap;
-  width:400px
 }
 
 nav ul {
@@ -72,10 +71,19 @@ nav ul li a:hover {
   border-radius:         10px;
 }
 
+.right {
+	float:right;
+}
+
+.left {
+	float:left;
+}
 
 #container {
 	width: 804px;
+	min-height: 600px;
 	margin: 0 auto;
+	margin-top: 50px;
 	background: #fff;
 	padding-left: 30px;
 	-webkit-border-radius: 20px; -moz-border-radius: 20px;
@@ -83,8 +91,16 @@ nav ul li a:hover {
 
 #logo {
 	background-color: white;
-	width: 280px;
+	width: 300px;
+	position:relative;
+	top: -60px;
+	padding-left:20px;
+}
 
+#topnav {
+	position:relative;
+	top:-40px;
+	
 }
 
 #contentcolumn {
@@ -148,8 +164,8 @@ tr.even {
 	-webkit-border-radius: 5px; -moz-border-radius: 5px;
 }
 #subline {
-	color:#666;
-	font-size: 9pt;
+	color:#323;
+	font-size: 10pt;
 	font-style: italic;
 }
 #comment {

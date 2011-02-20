@@ -4,6 +4,6 @@
 	<li> <%= link_to sanitize(question.body), question %> - <%= getUsernameLinkById(question.user_id) %>
 <% end %>
 </ul>
-<p />
+<p>
 <%= link_to "Add a question", new_question_path %>
-
+</p>

@@ -9,10 +9,12 @@
 <body>
 
 <div id="container">
-
-	<nav class="round">
+	<div id="topnav">
+	<nav class="round right">
 	  <%= render("shared/topnav") %>
 	</nav>
+	</div>
+	<br clear="all"/>
 
 	<div id="logo" class="round">
 	  <%= link_to(image_tag("theo.png", :border =>0), root_path) %>
