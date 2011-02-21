@@ -3,7 +3,7 @@ body {
 	line-height: 1.4;
 	color: #555753; 
 	background-color: #301830;
-    /*background-image: url(/images/psych_bg.jpg);*/
+    background-image: url(/images/psych_bg.png);
 	}
 h1 {
 	font-size: 150%;
@@ -83,7 +83,7 @@ nav ul li a:hover {
 	width: 804px;
 	min-height: 600px;
 	margin: 0 auto;
-	margin-top: 50px;
+	margin-top: 80px;
 	background: #fff;
 	padding-left: 30px;
 	-webkit-border-radius: 20px; -moz-border-radius: 20px;
@@ -91,15 +91,16 @@ nav ul li a:hover {
 
 #logo {
 	background-color: white;
-	width: 300px;
+	width: 180px;
+	float: middle;
+	padding-left: 30px;
 	position:relative;
-	top: -60px;
-	padding-left:20px;
+	top:-70px;
 }
 
 #topnav {
 	position:relative;
-	top:-40px;
+	top:-90px;
 	
 }
 
@@ -169,7 +170,7 @@ tr.even {
 	font-style: italic;
 }
 #comment {
-	background-color:#000;
+	background-color:#222;
 	padding-left: 3px;
 	padding-bottom: 3px;
 	padding-top: 32px;

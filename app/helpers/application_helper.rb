@@ -13,7 +13,7 @@ module ApplicationHelper
   
   def thumbnail(user_id)
     @user = User.find_by_id(user_id)
-    image_tag @user.avatar.url(:thumb)
+    link_to (image_tag @user.avatar.url(:thumb)), @user
   end
   
 end

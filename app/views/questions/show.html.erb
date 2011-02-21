@@ -1,5 +1,7 @@
 
 <h1>  <%= sanitize(@question.body) %> </h1>
+<div id="subline">
+	by <%= getUsernameLinkById(@question.user_id)%>, <%= time_ago_in_words(@question.created_at) %> ago
 
 <p>
 <%= render ("/shared/comment_form")%>
