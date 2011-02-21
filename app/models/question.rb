@@ -3,5 +3,5 @@ class Question < ActiveRecord::Base
   has_many :comments
   validates :body, :length => { :maximum => 140}
   validates_presence_of :body, :user_id
-  attr_accessible  :commentcount
+  attr_accessible  :commentcount, :body
 end

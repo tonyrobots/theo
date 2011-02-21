@@ -1,13 +1,9 @@
 class ChangeQuestionBodyToText < ActiveRecord::Migration
   def self.up
-    change_table :questions do |t|
-     t.change :body, :text
-   end
+    change_column :questions, :body,   :text
   end
 
   def self.down
-    change_table :questions do |t|
-     t.change :body, :string
-    end
+    change_column :questions, :body,   :string
   end
 end
