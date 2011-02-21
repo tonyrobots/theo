@@ -9,4 +9,9 @@ module ApplicationHelper
       current_user.id == id
     end
   end
+  
+  def thumbnail(user_id)
+    @user = User.find_by_id(user_id)
+    image_tag @user.avatar.url(:thumb)
+  end
 end
