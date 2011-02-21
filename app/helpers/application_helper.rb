@@ -4,6 +4,7 @@ module ApplicationHelper
     link_to @user.username, @user
   end
   
+  
   def current_user_is?(id)
     if user_signed_in?
       current_user.id == id
@@ -14,4 +15,5 @@ module ApplicationHelper
     @user = User.find_by_id(user_id)
     image_tag @user.avatar.url(:thumb)
   end
+  
 end

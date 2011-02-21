@@ -1,9 +1,13 @@
 <h1>Latest Questions:</h1>
-<ul>
+<table>
 <% @questions.each do |question| %>
-	<li><%= thumbnail(question.user_id)%> <%= link_to sanitize(question.body), question %> - <%= getUsernameLinkById(question.user_id) %>
+	<tr><td><%= thumbnail(question.user_id)%><br/>
+	<%= getUsernameLinkById(question.user_id) %></td>
+	
+	 <td><%= link_to sanitize(question.body), question %></td>
+	</tr>
 <% end %>
-</ul>
+</table>
 <p>
 <%= link_to "Add a question", new_question_path %>
 </p>
